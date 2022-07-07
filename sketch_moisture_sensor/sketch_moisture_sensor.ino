@@ -6,8 +6,8 @@ int sensorValue;
 String currentColor = "";
 
 void setup() {
-    Serial.begin(9600);
-    Serial.println("Reading from sensor....");
+//    Serial.begin(9600);
+//    Serial.println("Reading from sensor....");
     pinMode(redLed, OUTPUT);
     pinMode(yellowLed, OUTPUT);
     pinMode(greenLed, OUTPUT);
@@ -19,26 +19,26 @@ void setup() {
 void loop() {
     // Read the value from moisture sensor using analog pin
     sensorValue = analogRead(aZero);
-    Serial.print("Initial Sensor value ");
-    Serial.println(sensorValue);
+//    Serial.print("Initial Sensor value ");
+//    Serial.println(sensorValue);
     
     // Map the moisture sensors values to precentages
     // 1023 is the value in dry soil
     sensorValue = map(sensorValue, 1023, 0, 0, 100);
-    Serial.print("Mapped value ");
-    Serial.println(sensorValue);
+//    Serial.print("Mapped value ");
+//    Serial.println(sensorValue);
 
     if (sensorValue >= 0 && sensorValue <= 33) {
       // Water is needed turn on red light
-      Serial.println("RED");
+//      Serial.println("RED");
       changeLight("RED");
     } else if (sensorValue > 33 && sensorValue < 66) {
       // Water is in the mid range turn on yellow light
-      Serial.println("YELLOW");
+//      Serial.println("YELLOW");
       changeLight("YELLOW");
     } else {
       // Water is good turn on green light
-      Serial.println("GREEN");
+//      Serial.println("GREEN");
       changeLight("GREEN");
     }
     delay(5000);
