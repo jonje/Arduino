@@ -23,8 +23,8 @@ void loop() {
     Serial.println(sensorValue);
     
     // Map the moisture sensors values to precentages
-    // 550 is the value in dry soil
-    sensorValue = map(sensorValue, 550, 0, 0, 100);
+    // 1023 is the value in dry soil
+    sensorValue = map(sensorValue, 1023, 0, 0, 100);
     Serial.print("Mapped value ");
     Serial.println(sensorValue);
 
