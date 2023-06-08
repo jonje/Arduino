@@ -24,11 +24,11 @@ void loop() {
     
     // Map the moisture sensors values to precentages
     // 550 is the value in dry soil
-    sensorValue = map(sensorValue, 550, 0, 0, 100);
+    sensorValue = map(sensorValue, 1023, 225, 0, 100);
     Serial.print("Mapped value ");
     Serial.println(sensorValue);
 
-    if (sensorValue >= 0 && sensorValue <= 33) {
+    if (sensorValue <= 33) {
       // Water is needed turn on red light
       Serial.println("RED");
       changeLight("RED");
